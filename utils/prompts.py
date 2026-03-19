@@ -16,39 +16,28 @@ def get_explain_concept_prompt(topic: str, question: str = None) -> str:
 
 
 def get_quiz_generation_prompt(topic: str, difficulty: str, num_questions: int) -> str:
-    """Quiz generation prompt with complete examples and strict requirements."""
-    return f"""Create EXACTLY {num_questions} {difficulty} quiz questions about "{topic}".
-
-REQUIREMENTS:
-- REAL questions with complete, detailed content (not generic templates)
-- All answers must be FACTUALLY CORRECT - verify every answer
-- Each option must be full text, unique, and plausible
-- correct_answer_index points to the ONE correct option (0, 1, 2, or 3)
-- explanation explains WHY that answer is correct
-
-EXAMPLE (return similar format):
+    """Simplified quiz generation prompt for faster responses."""
+    return f"""Create {num_questions} {difficulty} quiz questions about {topic}. Respond ONLY as valid JSON:
 {{
-  "topic": "Python Programming",
-  "difficulty": "easy",
+  "topic": "{topic}",
+  "difficulty": "{difficulty}",
   "questions": [
     {{
       "id": 1,
-      "question": "What does the len() function return?",
-      "options": ["The first element of a list", "The number of items in an object like a list or string", "The data type of an object", "The memory address of an object"],
-      "correct_answer_index": 1,
-      "explanation": "The len() function returns the number of items in a sequence (list, string, tuple) or the number of key-value pairs in a dictionary."
-    }},
-    {{
-      "id": 2,
-      "question": "Which of these is a mutable data type in Python?",
-      "options": ["Tuple", "String", "List", "Integer"],
-      "correct_answer_index": 2,
-      "explanation": "Lists are mutable (can be modified), while tuples, strings, and integers are immutable."
+      "question": "The actual question text goes here?",
+      "options": ["Option A - complete text", "Option B - complete text", "Option C - complete text", "Option D - complete text"],
+      "correct_answer_index": 0,
+      "explanation": "Why option A is correct and others are wrong."
     }}
   ]
 }}
 
-NOW generate {num_questions} real questions about {topic}. Return ONLY valid JSON, no other text."""
+REQUIREMENTS:
+- Real, specific questions about {topic} - not generic
+- Complete answer text (not A, B, C, D)
+- correct_answer_index: 0, 1, 2, or 3
+- All answers factually correct
+- No other text, only JSON"""
 
 
 def get_evaluate_answer_prompt(question: str, user_answer: str, correct_answer: str, options: list) -> str:

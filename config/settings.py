@@ -13,10 +13,10 @@ STREAMLIT_CONFIG = {
 # LLM Configuration
 OLLAMA_HOST = "http://localhost:11434"
 OLLAMA_MODEL = "neural-chat"  # Fast model (10-30s per request)
-OLLAMA_TIMEOUT_EXPLAIN = 45   # seconds for explanations
-OLLAMA_TIMEOUT_QUIZ = 120     # seconds for quiz generation
-OLLAMA_TIMEOUT_EVALUATE = 60  # seconds for answer evaluation
-OLLAMA_RETRIES = 2            # number of retries on timeout
+OLLAMA_TIMEOUT_EXPLAIN = 120   # seconds for explanations
+OLLAMA_TIMEOUT_QUIZ = 600      # seconds for quiz generation (generous timeout for resource-heavy ops)
+OLLAMA_TIMEOUT_EVALUATE = 120  # seconds for answer evaluation
+OLLAMA_RETRIES = 1             # Reduce retries to avoid long waits
 
 # Gamification System
 GAMIFICATION = {
