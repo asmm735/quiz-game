@@ -263,16 +263,6 @@ Level 5 (400+)      🏆 Quiz Champion
 
 ---
 
-## ❌ What's NOT Implemented
-
-- ❌ Adaptive difficulty (levels are fixed, not adaptive)
-- ❌ Video explanations
-- ❌ Mobile app (web-only, works on all browsers)
-- ❌ Advanced analytics dashboard
-- ❌ Community sharing features
-- ❌ Voice-based interactions
-
----
 
 ## 🐛 Troubleshooting
 
@@ -406,4 +396,4 @@ MIT License - Free to use, modify, and distribute
 **Made with ❤️ for learners everywhere**
 
 **Status**: ✅ Fully Functional | **Tech Stack**: Streamlit + Ollama + Python  
-**GitHub**: [quiz-game](https://github.com/YOUR_USERNAME/quiz-game) | **Last Updated**: March 2026
+**GitHub**: [quiz-game](https://github.com/asmm735/quiz-game/) | **Last Updated**: March 2026
